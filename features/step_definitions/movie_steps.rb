@@ -29,3 +29,9 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
     step "#{uncheck}check \"ratings_#{rating}\""
   end
 end
+
+Given /I (un)?check all ratings/ do |un|
+  Movie.all_ratings.each do |rating|
+    step "#{un}check \"ratings_#{rating}\""
+  end
+end
